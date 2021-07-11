@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
     <div class="custom-content">
         {% for block in section.blocks %}
         {% case block.settings.width %}
@@ -45,117 +45,116 @@
         </div>
         {% endif %}
     </div>
-</div>
+</div> -->
 
+<section id="cta">
+	<header>
+		<h3 class="header_3"> {{ section.settings.code }} NEW ANDBOX DROP </h3>
+	</header>
 
+	<div class="link-wrapper">
+    	<a href="" class="btn-link black"> <span> shop the latest </span> </a>
+    </div>
+	
+</section>
 
 {% schema %}
 {
 	"name": {
 		"en": "ANDBOX CTA"
 	},
-	"max_blocks": 9,
-	"blocks": [{
-		"type": "html",
-		"name": {
-			"en": "ANDBOX CTA"
-		},
-		"settings": [{
-				"type": "html",
-				"id": "code",
-				"label": {
+	"settings": [{
+			"type": "text",
+			"id": "code",
+			"label": {
 
-					"en": "HTML"
+				"en": "TEXT"
 
-				},
-				"default": {
-					"en": "<div style='text-align:center;'><h2>Use HTML to format your text so it can be easily read.</h2>This text can be used to share information about yourbrand with customers.</div>"
-				}
 			},
-			{
-				"type": "select",
-				"id": "width",
-				"label": {
-					"en": "Container width"
-				},
-				"default": "100%",
-				"options": [{
-						"value": "25%",
-						"label": {
-							"en": "25%"
-						}
-					},
-					{
-						"value": "33%",
-						"label": {
-							"en": "33%"
-						}
-					},
-					{
-						"value": "50%",
-						"label": {
-							"en": "50%"
-						}
-					},
-					{
-						"value": "66%",
-						"label": {
-							"en": "66%"
-						}
-					},
-					{
-						"value": "75%",
-						"label": {
-							"en": "75%"
-						}
-					},
-					{
-						"value": "100%",
-						"label": {
-							"en": "100%"
-						}
-					}
-				]
-			},
-			{
-				"type": "select",
-				"id": "alignment",
-				"label": {
-					"en": "Vertical alignment"
-				},
-				"default": "top-middle",
-				"options": [{
-						"value": "top-middle",
-						"label": {
-							"en": "Top"
-						}
-					},
-					{
-						"value": "center",
-						"label": {
-							"en": "Middle"
-						}
-					},
-					{
-						"value": "bottom-middle",
-						"label": {
-							"en": "Bottom"
-						}
-					}
-				]
+			"default": {
+				"en": "CTA Headline"
 			}
-		]
-	}],
+		},
+		{
+			"type": "select",
+			"id": "width",
+			"label": {
+				"en": "Container width"
+			},
+			"default": "100%",
+			"options": [{
+					"value": "25%",
+					"label": {
+						"en": "25%"
+					}
+				},
+				{
+					"value": "33%",
+					"label": {
+						"en": "33%"
+					}
+				},
+				{
+					"value": "50%",
+					"label": {
+						"en": "50%"
+					}
+				},
+				{
+					"value": "66%",
+					"label": {
+						"en": "66%"
+					}
+				},
+				{
+					"value": "75%",
+					"label": {
+						"en": "75%"
+					}
+				},
+				{
+					"value": "100%",
+					"label": {
+						"en": "100%"
+					}
+				}
+			]
+		},
+		{
+			"type": "select",
+			"id": "alignment",
+			"label": {
+				"en": "Vertical alignment"
+			},
+			"default": "top-middle",
+			"options": [{
+					"value": "top-middle",
+					"label": {
+						"en": "Top"
+					}
+				},
+				{
+					"value": "center",
+					"label": {
+						"en": "Middle"
+					}
+				},
+				{
+					"value": "bottom-middle",
+					"label": {
+						"en": "Bottom"
+					}
+				}
+			]
+		}
+	],
 	"presets": [{
 		"name": {
 			"en": "ANDBOX CTA"
 		},
 		"category": {
 			"en": "Advanced layout"
-		},
-		"blocks": [{
-			"type": "html"
-		}]
+		}
 	}]
 }
 {% endschema %}
