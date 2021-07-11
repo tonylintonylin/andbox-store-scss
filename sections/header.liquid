@@ -45,17 +45,18 @@
   .header-wrapper .site-nav--has-dropdown > a.nav-focus:focus,
   .header-wrapper .site-nav--has-dropdown .site-nav__link:hover,
   .header-wrapper .site-nav--has-dropdown .site-nav__link:focus,
-  .header-wrapper .site-nav--has-dropdown.nav-hover > a:hover,
-  .header-wrapper .site-nav__dropdown a:focus {
+  .header-wrapper .site-nav--has-dropdown.nav-hover > a:hover
+  <!-- ,.header-wrapper .site-nav__dropdown a:focus  -->
+  {
     color: {{ header_color | color_modify: 'alpha', 0.75 }};
   }
 
   .header-wrapper .burger-icon,
-  .header-wrapper .site-nav--has-dropdown:hover > a:before,
+  <!-- .header-wrapper .site-nav--has-dropdown:hover > a:before,
   .header-wrapper .site-nav--has-dropdown > a.nav-focus:before,
   .header-wrapper .site-nav--has-dropdown.nav-hover > a:before {
     background: {{ header_color }};
-  }
+  } -->
 
   .header-wrapper .site-nav__link:hover .burger-icon {
     background: {{ header_color | color_modify: 'alpha', 0.75 }};

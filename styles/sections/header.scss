@@ -57,3 +57,38 @@ header.site-header .wrapper .header_content_container {
 .site-header__logo a, .site-header__logo img {
     display: block;
 }
+
+header.site-header .wrapper #main_nav a.site-nav__link {
+    padding: 0 1.5rem;
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 1.16666666667;
+    letter-spacing: .084375rem;
+}
+
+.site-nav--has-dropdown.nav-hover>a, .site-nav--has-dropdown:hover>a, .site-nav--has-dropdown>a.nav-focus {
+    background-color: transparent;
+}
+
+.site-nav__dropdown {
+    padding: 10px 0;
+    background: #000;
+}
+
+.site-nav__dropdown a, .site-nav__grandchild-dropdown a {
+    background-color: transparent;
+    background-color: #000;
+    color: #222323;
+    color: #fff;
+    font-style: inherit;
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 1.16666666667;
+    letter-spacing: .084375rem;
+    text-transform: uppercase;
+}
+
+.site-nav__dropdown a:active, .site-nav__dropdown a:focus, .site-nav__dropdown a:hover, .site-nav__grandchild-dropdown a:active, .site-nav__grandchild-dropdown a:focus, .site-nav__grandchild-dropdown a:hover {
+    background-color: transparent;
+    color: #a26b25;
+}
