@@ -1,7 +1,6 @@
 header.site-header {
     background: #000;
     height: 3.6875rem;
-    padding: 0;
 }
 
 header.site-header .wrapper {
@@ -29,7 +28,18 @@ header.site-header .wrapper .header_content_container {
 }
 
 //mobile
+@media screen and (max-width: 720px){
+    header.site-header .wrapper {
+        padding: 0 1rem;
+    }
+}
+
+
 @media only screen and (min-width: 769px){
+    .header-container .large--hide {
+        display: block!important;
+    }
+
     .large--hide {
         display: none!important;
     }
@@ -42,6 +52,19 @@ header.site-header .wrapper .header_content_container {
         text-align: left;
         font-size: 1.5625em;
     }
+}
+
+header.site-header .large--hide a.site-nav__link.cart-link.js-drawer-open-button-right {
+    height: 21px;
+}
+
+header.site-header .mob-first-row {
+    display: flex;
+    align-items: center;
+}
+
+.burger-icon {
+    background: #fff;
 }
 
 .site-header__logo a.site-header__logo-link {

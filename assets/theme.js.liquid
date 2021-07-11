@@ -4327,7 +4327,9 @@ theme.fitNav = function() {
       navItemWidth += Math.ceil($(this).width());
     });
 
-    if (navItemWidth > navWidth) {
+    // if (navItemWidth > navWidth) {
+    if ( $(window).width() < 1024 ) {
+
       // theme.cache.$siteNav.addClass('site-nav--compress');
       // theme.cache.$siteNav.parent().removeClass('large--two-thirds').addClass('large--one-sixth');
       theme.cache.$siteNavOpen.addClass('site-nav--open__display');
@@ -4336,6 +4338,7 @@ theme.fitNav = function() {
       theme.cache.$logoWrapper.removeClass('large--left').addClass('text-center');
       theme.cache.$searchBox.hide();
     } else {
+
       // theme.cache.$siteNav.removeClass('site-nav--compress');
       theme.cache.$siteNavOpen.removeClass('site-nav--open__display');
       theme.cache.$siteNavOpen.parent().addClass('large--hide');
