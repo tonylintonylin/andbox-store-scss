@@ -1,0 +1,28 @@
+{
+  "name": "andbox-store-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonylintonylin/andbox-store-scss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonylintonylin/andbox-store-scss/issues"
+  },
+  "homepage": "https://github.com/tonylintonylin/andbox-store-scss#readme",
+  "dependencies": {
+    "@shopify/themekit": "^1.1.9"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1"
+  }
+}
