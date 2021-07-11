@@ -1,0 +1,19 @@
+@media screen and (max-width:1023px){
+    .hide-tab{
+        display:none!important
+    }
+}
+
+@media screen and (min-width:1024px){
+    .tab-down{
+        display:none!important
+    }
+}
+
+iframe, img {
+    max-width: 100%;
+}
+
+img {
+    border: 0 none;
+}
