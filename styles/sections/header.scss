@@ -21,12 +21,14 @@ header.site-header .wrapper .header_content_container {
     height: 100%;
 }
 
+//logo
 .site-header__logo {
     font-size: 1.25em;
     text-align: center;
     margin: 0 auto;
 }
 
+//mobile
 @media only screen and (min-width: 769px){
     .large--hide {
         display: none!important;
@@ -58,6 +60,7 @@ header.site-header .wrapper .header_content_container {
     display: block;
 }
 
+//main content
 header.site-header .wrapper #main_nav a.site-nav__link {
     padding: 0 1.5rem;
     font-weight: 700;
@@ -91,4 +94,9 @@ header.site-header .wrapper #main_nav a.site-nav__link {
 .site-nav__dropdown a:active, .site-nav__dropdown a:focus, .site-nav__dropdown a:hover, .site-nav__grandchild-dropdown a:active, .site-nav__grandchild-dropdown a:focus, .site-nav__grandchild-dropdown a:hover {
     background-color: transparent;
     color: #a26b25;
+}
+
+// utility
+header.site-header .wrapper #utility_nav a.site-nav__link {
+    padding: 0 .5rem;
 }
