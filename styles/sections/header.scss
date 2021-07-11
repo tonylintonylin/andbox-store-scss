@@ -54,6 +54,10 @@ header.site-header .wrapper .header_content_container {
     }
 }
 
+.site-nav--mobile.text-right {
+    margin: 0 0 0 -10px;
+}
+
 header.site-header .large--hide a.site-nav__link.cart-link.js-drawer-open-button-right {
     height: 21px;
 }
@@ -65,6 +69,14 @@ header.site-header .mob-first-row {
 
 .burger-icon {
     background: #fff;
+}
+
+a.site-nav__link.cart-link.js-drawer-open-button-right {
+    padding: 0px;
+}
+
+header.site-header .large--hide span.icon.icon-cart {
+    font-size: 1.2rem;
 }
 
 .site-header__logo a.site-header__logo-link {
