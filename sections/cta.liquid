@@ -47,33 +47,79 @@
     </div>
 </div> -->
 
-<section id="cta">
-	<header>
-		<h3 class="header_3"> {{ section.settings.code }} NEW ANDBOX DROP </h3>
-	</header>
+{% if section.settings.invert_colors %}
+	<!-- inverted -->
+	<section id="cta" class="inverted">
+		<header>
+			<!-- inverted -->
+			<h3 class="header_3 inverted-headline"> 
+				{{ section.settings.heading }} 
+			</h3>
+		</header>
 
-	<div class="link-wrapper">
-    	<a href="" class="btn-link black"> <span> shop the latest </span> </a>
-    </div>
-	
-</section>
+		<div class="link-wrapper">
+			<!-- inverted -->
+			<a href="" class="btn-link white"> 
+				<span> 
+					{{ section.settings.button_label }}
+				</span> 
+			</a>
+		</div>
+	</section>
+
+{% else %}
+
+	<section id="cta">
+		<header>
+			<h3 class="header_3"> 
+				{{ section.settings.heading }} 
+			</h3>
+		</header>
+
+		<div class="link-wrapper">
+			<a href="" class="btn-link black"> 
+				<span> 
+					{{ section.settings.button_label }}
+				</span> 
+			</a>
+		</div>
+	</section>
+
+{% endif %}
 
 {% schema %}
 {
 	"name": {
 		"en": "ANDBOX CTA"
 	},
-	"settings": [{
+	"settings": [
+		{
 			"type": "text",
-			"id": "code",
+			"id": "heading",
 			"label": {
-
-				"en": "TEXT"
-
+				"en": "Headline"
 			},
 			"default": {
-				"en": "CTA Headline"
+				"en": "NEW ANDBOX DROP"
 			}
+		},
+		{
+			"type": "text",
+			"id": "button_label",
+			"label": {
+				"en": "Button text"
+			},
+			"default": {
+				"en": "shop the latest"
+			}
+		},
+		{
+			"type": "checkbox",
+			"id": "invert_colors",
+			"label": {
+				"en": "Invert Colors"
+			},
+			"default": false
 		},
 		{
 			"type": "select",
