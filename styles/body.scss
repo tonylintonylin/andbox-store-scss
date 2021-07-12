@@ -44,10 +44,10 @@ img {
     -ms-interpolation-mode: bicubic;
 }
 
-// .index-sections .shopify-section{
-//     margin: 0;
-// }
+.index-sections .shopify-section{
+    margin: 0;
+}
 // might need to switch to this later
-// .index-sections .shopify-section:first-child {
+// .index-sections .shopify-section:nth-child(2) {
 //     margin: 0;
 // }
