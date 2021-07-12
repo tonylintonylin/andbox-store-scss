@@ -61,7 +61,14 @@
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
   <!-- Header hook for plugins ================================================== -->
-  {{ content_for_header }}
+  <!-- testing modified content for header -->
+  <!-- {{ content_for_header }} -->
+
+  {% capture custom_content_for_header %}
+    {{ content_for_header | replace: '"theme_store_id":730', '"theme_store_id":null'}}
+  {% endcapture %}
+
+  {{ custom_content_for_header }}
 
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
