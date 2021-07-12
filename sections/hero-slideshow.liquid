@@ -142,16 +142,16 @@
                 {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
 
                 <div class="link-wrapper">
-                  {% increment block_color %}
+                  {% capture block_num %}{% increment block_color %}{% endcapture %}
                   <style>
-                    .btn-link::before{
+                    .btn-link.special{{block_num}}::before{
                       background-color: {{block.settings.slide_button_background_color}} !important;
                     }
-                    .btn-link::after {
+                    .btn-link.special{{block_num}}::after {
                       border-top-color: {{block.settings.slide_button_background_color}} !important;
                     }
                   </style>
-                  <a href="{{ block.settings.button_link }}" style="color: {{ block.settings.slide_button_label_color }}; background-color: {{ block.settings.slide_button_background_color }}" class="btn-link hero__cta"> 
+                  <a href="{{ block.settings.button_link }}" style="color: {{ block.settings.slide_button_label_color }}; background-color: {{ block.settings.slide_button_background_color }}" class="btn-link special{{block_num}} hero__cta"> 
                     <span> 
                       {{ block.settings.button_label | escape }}
                     </span> 
