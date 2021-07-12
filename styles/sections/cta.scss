@@ -65,6 +65,10 @@
     position: relative;
 }
 
+.btn-link.black::after {
+    border-top-color: #000;
+}
+
 .btn-link span {
     display: flex;
     align-items: center;
@@ -83,9 +87,7 @@
     background-position: center right;
 }
 
-.btn-link.black::after {
-    border-top-color: #000;
-}
+
 
 .btn-link::after {
     content: ' ';
