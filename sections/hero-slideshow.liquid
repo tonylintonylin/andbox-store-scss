@@ -55,6 +55,8 @@
           #HeroWrapper-{{ section.id }} .hero--color-{{ forloop.index0 }} .slick-dots li a:before {
             background: transparent;
             border-color: {{ block.settings.slide_text_color }};
+            background: rgba(255,255,255,.5);
+            border-color: transparent;
           }
           #HeroWrapper-{{ section.id }} .hero--color-{{ forloop.index0 }} li.slick-active a:before {
             background: {{ block.settings.slide_text_color }};
@@ -156,14 +158,6 @@
           </button>
         </div>
         <div class="hero__controls wrapper">
-          <!-- hide pause button -->
-          <!-- {%- if section.settings.hero_home_auto -%}
-            <button class="hero__pause" aria-live="polite" aria-label="{{ 'home_page.slideshow.pause' | t }}" data-label-pause="{{ 'home_page.slideshow.pause' | t }}" data-label-play="{{ 'home_page.slideshow.play' | t }}" data-pause>
-              <span class="icon icon-pause" aria-hidden="true"></span>
-              <span class="icon icon-play" aria-hidden="true"></span>
-            </button>
-          {%- endif -%} -->
-
           <div class="hero__dots-wrapper" data-hero-dots-wrapper></div>
         </div>
       {%- endif -%}

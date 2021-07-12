@@ -27,3 +27,28 @@
     background-image: url(//cdn.shopify.com/s/files/1/0142/6007/6630/files/next_arrow.svg?v=17711063703342013326);
     right: 2rem;
 }
+
+.hero__dots-wrapper {
+    position: absolute;
+    bottom: 1rem;
+    margin-left: 6.625rem;
+}
+
+// .hero__dots-wrapper .slick-dots li a,
+// .hero__dots-wrapper .slick-dots li a:before{
+//     height: .625rem;
+//     width: .625rem;
+//     background: rgba(255,255,255,.5);
+//     display: inline-block;
+//     margin-right: 1rem;
+// }
+
+.slick-dots li a:before {
+    background: rgba(255,255,255,.5);
+    border-color: transparent;
+}
+
+.slick-slider .slick-dots li a:before, .slick-slider .slick-dots li button:before {
+    border-radius: 0;
+    margin: 0rem 0 0 0rem;
+}
