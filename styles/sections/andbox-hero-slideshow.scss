@@ -1,0 +1,29 @@
+
+.owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    top: calc(50% - 1.125rem);
+}
+
+.owl-prev span,
+.owl-next span {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    width: 1.375rem;
+    height: 2.25rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.375rem 2.25rem;
+}
+
+.owl-prev span.hero-prev {
+    background-image: url(//cdn.shopify.com/s/files/1/0142/6007/6630/files/prev_arrow.svg?v=3659228205801826003);
+    left: 2rem;
+}
+
+.owl-next span.hero-next {
+    background-image: url(//cdn.shopify.com/s/files/1/0142/6007/6630/files/next_arrow.svg?v=17711063703342013326);
+    right: 2rem;
+}

@@ -146,25 +146,24 @@
       {%- endfor -%}
 
       {%- if section.blocks.size > 1 -%}
+        <div class="owl-nav">
+          <button class="owl-prev" aria-label="{{ 'home_page.slideshow.previous_slide' | t }}" data-slide-previous>
+            <span class="hero-prev" aria-hidden="true"></span>
+          </button>
+
+          <button class="owl-next" aria-label="{{ 'home_page.slideshow.next_slide' | t }}" data-slide-next>
+            <span class="hero-next" aria-hidden="true"></span>
+          </button>
+        </div>
         <div class="hero__controls wrapper">
-          {%- if section.settings.hero_home_auto -%}
+          <!-- hide pause button -->
+          <!-- {%- if section.settings.hero_home_auto -%}
             <button class="hero__pause" aria-live="polite" aria-label="{{ 'home_page.slideshow.pause' | t }}" data-label-pause="{{ 'home_page.slideshow.pause' | t }}" data-label-play="{{ 'home_page.slideshow.play' | t }}" data-pause>
               <span class="icon icon-pause" aria-hidden="true"></span>
               <span class="icon icon-play" aria-hidden="true"></span>
             </button>
-          {%- endif -%}
-          <ul>
-            <li>
-              <button class="slick-prev" aria-label="{{ 'home_page.slideshow.previous_slide' | t }}" data-slide-previous>
-                <span class="icon icon-slide-prev" aria-hidden="true"></span>
-              </button>
-            </li>
-            <li>
-              <button class="slick-next" aria-label="{{ 'home_page.slideshow.next_slide' | t }}" data-slide-next>
-                <span class="icon icon-slide-next" aria-hidden="true"></span>
-              </button>
-            </li>
-          </ul>
+          {%- endif -%} -->
+
           <div class="hero__dots-wrapper" data-hero-dots-wrapper></div>
         </div>
       {%- endif -%}
@@ -198,7 +197,7 @@
 {% schema %}
 {
   "name": {
-    "en": "Hero Slideshow"
+    "en": "ANDBOX Hero Slideshow"
   },
   "class": "index-section index-slideshow-section shopify-section--full-width",
   "max_blocks": 6,
@@ -254,7 +253,7 @@
   "presets": [
     {
       "name": {
-        "en": "Hero Slideshow"
+        "en": "ANDBOX Hero Slideshow"
       },
       "category": {
         "en": "Image"
