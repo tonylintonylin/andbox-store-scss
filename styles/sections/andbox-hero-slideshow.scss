@@ -34,14 +34,13 @@
     margin-left: 6.625rem;
 }
 
-// .hero__dots-wrapper .slick-dots li a,
-// .hero__dots-wrapper .slick-dots li a:before{
-//     height: .625rem;
-//     width: .625rem;
-//     background: rgba(255,255,255,.5);
-//     display: inline-block;
-//     margin-right: 1rem;
-// }
+.hero .slick-dots {
+    margin: -18px -36px;
+}
+
+.slick-slider .slick-dots li {
+    margin: 0px 2px;
+}
 
 .slick-slider .slick-dots li a:before, .slick-slider .slick-dots li button:before {
     border-radius: 0;
