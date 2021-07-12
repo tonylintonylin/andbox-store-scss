@@ -1,0 +1,91 @@
+.half-container {
+    display: flex;
+}
+
+.half-container>.half-img {
+    height: 0;
+    padding-top: 35%;
+    background-size: cover;
+    background-position: center;
+}
+
+.half-container>* {
+    flex: 1;
+}
+
+.half-container>.half-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: url(//cdn.shopify.com/s/files/1/0142/6007/6630/files/Andbox-Blue-Watermark.jpg?v=9088675686897068008);
+    background-size: contain;
+    background-repeat-y: repeat;
+    background-repeat-x: no-repeat;
+    background-position: top;
+}
+
+.half-container>.half-text>* {
+    margin-left: 7rem;
+}
+
+.half-container>.half-text .h2, .half-container>.half-text h2 {
+    font-family: 'Roboto Condensed',monospace;
+    font-size: 3.125rem;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -.68px;
+    color: #1057e9;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    max-width: 23.5rem;
+}
+
+.btn-link.link-half {
+    color: #fff!important;
+    background-color: #78797a;
+}
+
+.half-container>.half-text>* {
+    margin-left: 7rem;
+}
+
+.btn-link.link-half:before {
+    background-color: #78797a;
+}
+
+#BIS_trigger span, .btn-link span {
+    display: flex;
+    align-items: center;
+}
+
+#BIS_trigger.link-blue span::after, .btn-link.link-blue span::after {
+    background-image: url(//cdn.shopify.com/s/files/1/0142/6007/6630/files/double_arrows.svg?v=1667016…);
+}
+
+#BIS_trigger span::after, .btn-link span::after {
+    display: block;
+    content: ' ';
+    background-repeat: no-repeat;
+    height: 1rem;
+    width: 2rem;
+    background-position: center right;
+}
+
+.btn-link.link-half:after {
+    border-top-color: #78797a;
+}
+
+#BIS_trigger::after, .btn-link::after {
+    content: ' ';
+    display: inline-block;
+    width: 2rem;
+    position: absolute;
+    left: 100%;
+    border-right: .75rem solid transparent;
+    border-top-width: .75rem;
+    border-top-style: solid;
+    height: .75rem;
+    bottom: 0;
+}
+
