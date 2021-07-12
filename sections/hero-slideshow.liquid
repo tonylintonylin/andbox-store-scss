@@ -43,6 +43,8 @@
          data-slide-nav-a11y="{{ 'home_page.slideshow.load_slide' | t: slide_number: '[slide_number]' }}"
          data-slide-nav-active-a11y="{{ 'home_page.slideshow.active_slide' | t: slide_number: '[slide_number]' }}"
          data-slide-index="0">
+
+      {% assign block_color = 0 %}
       {%- for block in section.blocks -%}
         {%- style -%}
           #HeroWrapper-{{ section.id }} .hero--color-{{ forloop.index0 }} .hero__pause,
@@ -140,11 +142,21 @@
                 {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
 
                 <div class="link-wrapper">
-                  <a href="{{ block.settings.button_link }}" style="color: {{ block.settings.slide_button_label_color }}; background-color: {{ block.settings.slide_button_background_color }}" class="btn-link black hero__cta"> 
+                  {% increment block_color %}
+                  <style>
+                    .btn-link::before{
+                      background-color: {{block.settings.slide_button_background_color}} !important;
+                    }
+                    .btn-link::after {
+                      border-top-color: {{block.settings.slide_button_background_color}} !important;
+                    }
+                  </style>
+                  <a href="{{ block.settings.button_link }}" style="color: {{ block.settings.slide_button_label_color }}; background-color: {{ block.settings.slide_button_background_color }}" class="btn-link hero__cta"> 
                     <span> 
                       {{ block.settings.button_label | escape }}
                     </span> 
                   </a>
+
                 </div>
 
                 {%- endif -%}
