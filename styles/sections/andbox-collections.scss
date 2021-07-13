@@ -1,0 +1,92 @@
+section#collections_highlight {
+    padding: 4rem;
+}
+
+// .half-container {
+//     display: flex;
+// }
+
+section#collections_highlight .left {
+    padding-right: 2rem;
+}
+
+section#collections_highlight .half-container>* {
+    display: flex;
+    flex-direction: column;
+}
+
+.left {
+    float: left!important;
+}
+
+section#collections_highlight .left a.img-holder {
+    padding-top: 92.5%;
+}
+
+section#collections_highlight a.img-holder {
+    height: 0;
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+section#collections_highlight a.img-holder img {
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    height: 100%;
+}
+
+section#collections_highlight .text-section {
+    margin-top: .75rem;
+}
+
+section#collections_highlight .eyebrow {
+    text-transform: uppercase;
+}
+
+section#collections_highlight .text-section a {
+    font-weight: 500;
+}
+
+section#collections_highlight .text-section a span {
+    font-family: 'Roboto Condensed',monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    letter-spacing: -.26px;
+    display: inline-flex;
+    align-items: center;
+}
+
+section#collections_highlight .left .text-section a span::after {
+    background-image: url(https://cdn.shopify.com/s/files/1/0142/6007/6630/files/double_arrows_blk.svg?v=1192693);
+    background-color: #ffec00;
+}
+
+section#collections_highlight .text-section a span::after {
+    content: ' ';
+    background-repeat: no-repeat;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-position: center;
+    margin-left: .5rem;
+
+    color: transparent;
+}
+
+//right container
+
+section#collections_highlight .right {
+    padding-left: 2rem;
+}
+
+section#collections_highlight .right a.img-holder {
+    padding-top: 117.5%;
+}
+
+section#collections_highlight .right .text-section a span::after {
+    background-image: url(https://cdn.shopify.com/s/files/1/0142/6007/6630/files/double_arrows.svg?v=1667016);
+    background-color: #d100ff;
+}

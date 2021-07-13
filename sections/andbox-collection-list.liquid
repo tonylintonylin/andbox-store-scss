@@ -1,68 +1,45 @@
-<div data-section-id="{{ section.id }}" data-section-type="featured-collections-section">
-  <div class="wrapper">
-    {% if section.settings.title != blank %}
-      <div class="section-header text-center">
-        <h2 class="h1 section-header__title">{{ section.settings.title | escape }}</h2>
-        <hr class="hr--small">
-      </div>
-    {% endif %}
 
-    <div class="grid collection-grid">
+<div id="shopify-section-1562784988632" class="shopify-section"><section id="collections_highlight">
 
-      {% comment %}
-        Show up to 9 collections.
-        Frontpage will be excluded if collections defined automatically.
-      {% endcomment %}
-      {% assign isEmpty = true %}
-      {% assign collection_index = 0 %}
-      {% assign collection_count = 0 %}
-      {% assign collection_limit = section.blocks.size %}
-
-      {% comment %}
-        Add one to the collection limit to offset chance of Frontpage being included
-      {% endcomment %}
-      {% assign collection_limit = collection_limit | plus: 1 %}
-
-      {% comment %}
-        Calculate number of collections to show, making sure Frontpage isn't one
-      {% endcomment %}
-      {% for collection in section.blocks limit: collection_limit %}
-          {% assign collection_count = collection_count | plus: 1 %}
-      {% endfor %}
-
-      {% if collection_count > 0 %}
-        {% assign isEmpty = false %}
-      {% endif %}
-
-      {% assign divisible_by_three = collection_count | modulo: 3 %}
-      {% assign divisible_by_two = collection_count | modulo: 2 %}
-
-      {% comment %}
-        Loop through the collections to display
-      {% endcomment %}
-      {% for block in section.blocks limit: collection_limit %}
-          {% assign collection = collections[block.settings.collection] %}
-          {% assign collection_index = collection_index | plus: 1 %}
-          {% assign collection_handle = collection.handle %}
-          {% include 'collection-grid-collage' %}
-      {% endfor %}
-
-      {% if isEmpty %}
-        <div class="wrapper">
-          <div class="grid">
-            <div class="grid__item">
-              <div class="rte text-center">
-                {{ 'home_page.onboarding.no_content' | t }}
-              </div>
-            </div>
-          </div>
+  <div class="half-container">
+  
+    <div class="left">
+      
+      	<a class="img-holder" href="/collections/andbox">
+        	<img src="//cdn.shopify.com/s/files/1/0142/6007/6630/files/twitch_header_AN.jpg?v=1604520177">
+        </a>
+      
+        <div class="text-section">
+            <span class="eyebrow header_7"> ANDBOX </span>
+      		<h3 class="header_3"> CLASSIC ESSENTIALS </h3>
+            <a href="/collections/andbox"> Shop the <span>Collection</span> </a>
         </div>
-      {% endif %}
-
+      
     </div>
+    
+    <div class="right">
+      
+      	<a class="img-holder" href="/collections/1st">
+        	<img src="//cdn.shopify.com/s/files/1/0142/6007/6630/files/Brian-Alcazar-Copyright-andbox-lic-nan-full-camo-roof-silvercup-candid.jpg?v=1602072700">
+        </a>
+      
+        <div class="text-section">
+            <span class="eyebrow header_7 "> 1ST DROP </span>
+      		<h3 class="header_3"> CAMO HOODED AND SWEAT KIT </h3>
+            <a href="/collections/1st"> Shop this <span>look</span> 
+            </a>
+        </div>
+      
+    </div>
+    
   </div>
-</div>
 
+</section>
+
+
+
+
+</div>
 
 {% schema %}
 {
