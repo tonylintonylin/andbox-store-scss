@@ -188,6 +188,7 @@ footer .footer-notes a, footer .footer-notes>* {
     text-transform: uppercase;
     line-height: 24px;
     color: #979797;
+    opacity: 0.9;
 }
 
 footer .footer-notes>* {
@@ -204,5 +205,6 @@ footer form#contact_form input#Email--placeholder {
 }
   
 input[type=email]::placeholder{
-    color:#fff;opacity:1
+    color:#fff;
+    opacity:0.9;
 }
