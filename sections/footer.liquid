@@ -1,292 +1,126 @@
-<footer class="site-footer small--text-center" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
-  <div class="wrapper">
+<div id="shopify-section-footer-andy" class="shopify-section">
 
-    <div class="grid-uniform">
-
-      {% comment %}
-        Default to 1 footer column (copyright/powered_by/payment_types)
-      {% endcomment %}
-      {% assign num_footer_columns = 1 %}
-
-      {% comment %}
-        Create an extra menu column if link list has more than 5 links
-      {% endcomment %}
-      {% if linklists[section.settings.footer_link_list].links.size > 0 %}
-        {% comment %}
-          We have a Footer menu that isn't empty, we will need another column
-        {% endcomment %}
-        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
-        {% assign extra_footer_linklist_column = false %}
-        {% assign footer_linklist_count = linklists[section.settings.footer_link_list].links.size %}
-        {% if footer_linklist_count > 5 %}
-          {% assign extra_footer_linklist_column = true %}
-          {% comment %}
-            We split the links so we'll need another column
-          {% endcomment %}
-          {% assign num_footer_columns = num_footer_columns | plus: 1 %}
-        {% endif %}
-        {% comment %}
-          If we have an odd amount of links, we need to show 1 more link in 1st column
-        {% endcomment %}
-        {% assign extra_link = footer_linklist_count | modulo: 2 %}
-        {% comment %}
-          We start with a 2nd column after first column is filled up.
-        {% endcomment %}
-        {% assign footer_linklist_split = footer_linklist_count | divided_by: 2 | plus: extra_link | plus: 1 %}
-      {% endif %}
-
-      {% comment %}
-        Determine whether there are social links
-      {% endcomment %}
-      {% assign footer_social_enable = false %}
-      {% if
-        settings.social_twitter_link != blank
-        or settings.social_facebook_link != blank
-        or settings.social_pinterest_link != blank
-        or settings.social_google_plus_link != blank
-        or settings.social_instagram_link != blank
-        or settings.social_tumblr_link != blank
-        or settings.social_youtube_link != blank
-        or settings.social_vimeo_link != blank
-        or settings.social_fancy_link != blank
-        or settings.social_snapchat_link != blank
-      %}
-        {% assign footer_social_enable = true %}
-      {% endif %}
-
-      {% comment %}
-        Determine whether to show selectors
-      {% endcomment %}
-      {%- assign show_country_selector = section.settings.show_currency_selector -%}
-      {%- assign country_selector = false -%}
-      {%- if show_country_selector and localization.available_countries.size > 1 -%}
-        {%- assign country_selector = true -%}
-      {%- endif -%}
-
-      {%- assign locale_selector = false -%}
-      {%- if section.settings.show_locale_selector and localization.available_languages.size > 1 -%}
-        {%- assign locale_selector = true -%}
-      {%- endif -%}
-
-      {% comment %}
-        Calculate the number of footer columns shown. Default to 1.
-      {% endcomment %}
-      {% if footer_social_enable %}
-        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
-      {% endif %}
-
-      {% case num_footer_columns %}
-        {% when 0 %}
-        {% when 1 %}
-          {% assign footer_column_width = '' %}
-        {% when 2 %}
-          {% assign footer_column_width = 'one-half small--one-whole' %}
-        {% when 3 %}
-          {% assign footer_column_width = 'one-third small--one-whole' %}
-        {% when 4 %}
-          {% assign footer_column_width = 'large--one-quarter medium--one-half' %}
-      {% endcase %}
-
-      {% if linklists[section.settings.footer_link_list].links.size > 0 %}
-        <div class="grid__item {{ footer_column_width }}">
-          <ul class="no-bullets site-footer__linklist">
-            {% for link in linklists[section.settings.footer_link_list].links %}
-
-      {% comment %}
-        Create a second column
-      {% endcomment %}
-      {% if extra_footer_linklist_column and forloop.index == footer_linklist_split %}
-          </ul>
-        </div>
-        <div class="grid__item {{ footer_column_width }}">
-          <ul class="no-bullets site-footer__linklist">
-      {% endif %}
-
-              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
-      {% if footer_social_enable %}
-        <div class="grid__item {{ footer_column_width }}">
-            <ul class="no-bullets social-icons">
-              {% if settings.social_facebook_link != blank %}
-                <li>
-                  <a href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
-                    <span class="icon icon-facebook" aria-hidden="true"></span>
-                    Facebook
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_twitter_link != blank %}
-                <li>
-                  <a href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
-                    <span class="icon icon-twitter" aria-hidden="true"></span>
-                    Twitter
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_pinterest_link != blank %}
-                <li>
-                  <a href="{{ settings.social_pinterest_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
-                    <span class="icon icon-pinterest" aria-hidden="true"></span>
-                    Pinterest
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_instagram_link != blank %}
-                <li>
-                  <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
-                    <span class="icon icon-instagram" aria-hidden="true"></span>
-                    Instagram
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_snapchat_link != blank %}
-                <li>
-                  <a href="{{ settings.social_snapchat_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}">
-                    <span class="icon icon-snapchat" aria-hidden="true"></span>
-                    Snapchat
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_google_plus_link != blank %}
-                <li>
-                  <a href="{{ settings.social_google_plus_link | escape }}" rel="publisher" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Google Plus' }}">
-                    <span class="icon icon-google_plus" aria-hidden="true"></span>
-                    Google Plus
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_tumblr_link != blank %}
-                <li>
-                  <a href="{{ settings.social_tumblr_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
-                    <span class="icon icon-tumblr" aria-hidden="true"></span>
-                    Tumblr
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_youtube_link != blank %}
-                <li>
-                  <a href="{{ settings.social_youtube_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}">
-                    <span class="icon icon-youtube" aria-hidden="true"></span>
-                    YouTube
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_vimeo_link != blank %}
-                <li>
-                  <a href="{{ settings.social_vimeo_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}">
-                    <span class="icon icon-vimeo" aria-hidden="true"></span>
-                    Vimeo
-                  </a>
-                </li>
-              {% endif %}
-              {% if settings.social_fancy_link != blank %}
-                <li>
-                  <a href="{{ settings.social_fancy_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Fancy' }}">
-                    <span class="icon icon-fancy" aria-hidden="true"></span>
-                    Fancy
-                  </a>
-                </li>
-              {% endif %}
-            </ul>
-        </div>
-      {% endif %}
-
-      {%- liquid
-        assign selectors_form_class = "selectors-form"
-
-        if num_footer_columns == 1
-          assign selectors_form_class = "selectors-form selectors-form--single-column"
-        endif
-      -%}
-
-      <div class="grid__item {{ footer_column_width }} {% if num_footer_columns == 1 %}text-center{% else %}large--text-right{% endif %}">
-        {%- form 'localization', class: selectors_form_class -%}
-          {%- if locale_selector -%}
-            <div class="selectors-form__item">
-              <h2 class="visually-hidden" id="lang-heading">
-                {{ 'general.language.dropdown_label' | t }}
-              </h2>
-
-              <div class="disclosure" data-disclosure-locale>
-                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
-                  {{ localization.language.endonym_name }}
-                </button>
-                <ul id="lang-list" class="disclosure-list" data-disclosure-list>
-                  {%- for language in localization.available_languages -%}
-                    <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
-                      <a class="disclosure-list__option" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-disclosure-option>
-                        {{ language.endonym_name }}
+  <footer role="contentinfo">
+    <div class="wrapper">
+  
+      <div class="footer_content_wrapper">
+        
+        <div class="top">
+          <div class="cell">
+            <div class="form-container footer-headings">
+  
+              <h4> Stay Up To Date <img src="//cdn.shopify.com/s/files/1/0142/6007/6630/files/newsletter-plane-icon.svg?v=7932066315131448282"></h4>
+  
+              <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+                
+                
+                  <label for="Email" class="newsletter__label hidden-label">Sign up to our mailing list</label>
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="newsletter--form">
+                    <div class="input-group">
+                      <input 
+                        type="email" 
+                        value="" 
+                        placeholder="Your email" 
+                        name="contact[email]" 
+                        id="Email" 
+                        class="input-group-field newsletter__input" 
+                        autocorrect="off" 
+                        autocapitalize="off"
+                      >
+                      <span class="input-group-btn">
+                        <button id="Subscribe" type="submit" class="btn newsletter__submit" aria-label="Subscribe">
+                          <span class="newsletter-arrow" aria-hidden="true"></span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                
+              </form>
+  
+            </div> <!-- form container -->
+          </div>
+  
+          <div class="cell">
+            <div class="footer-links footer-menu">
+              <ul class="no-bullets site-footer__linklist footer-headings">
+                
+                  <li><a href="/pages/shipping-returns">Shipping &amp; Returns</a></li>
+                
+                  <li><a href="/pages/size-chart">Size Chart</a></li>
+                
+                  <li><a href="/pages/contact-us">Ask a question</a></li>
+                
+                  <li><a href="https://shop.andbox.com/account/login">My Account</a></li>
+                
+                  <li><a href="/pages/contact">Contact</a></li>
+                
+                  <li><a href="https://andbox.com/about/">About us</a></li>
+                
+              </ul>
+            </div> <!-- footer links -->
+  
+          
+            <div class="footer-links social-media">
+                <ul class="no-bullets social-icons">
+                  
+                    <li>
+                      <a href="https://www.facebook.com/andbox" title="ANDBOX on Facebook">
+                        <span class="icon icon-facebook" aria-hidden="true"></span>
+  
                       </a>
                     </li>
-                  {%- endfor -%}
-                </ul>
-                <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ localization.language.iso_code }}" data-disclosure-input/>
-              </div>
-            </div>
-          {%- endif -%}
 
-          {%- if country_selector -%}
-            <div class="selectors-form__item">
-              <h2 class="visually-hidden" id="country-heading">
-                {{ 'general.country.dropdown_label' | t }}
-              </h2>
-              {%- assign current_currency_symbol = localization.country.currency.symbol -%}
-              {%- assign current_currency_iso_code = localization.country.currency.iso_code -%}
-              <div class="disclosure" data-disclosure-country>
-                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="country-list" aria-describedby="country-heading" data-disclosure-toggle>
-                  {%- if current_currency_symbol -%}
-                    {{ localization.country.name }} ({{ current_currency_iso_code }} {{ current_currency_symbol }})
-                  {%- else -%}
-                    {{ localization.country.name }} ({{ current_currency_iso_code }})
-                  {%- endif -%}
-                </button>
-                <ul id="country-list" class="disclosure-list" data-disclosure-list>
-                  {% for country in localization.available_countries %}
-                    {%- assign currency_symbol = country.currency.symbol -%}
-                    {%- assign currency_iso_code = country.currency.iso_code -%}
-                    <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
-                      <a class="disclosure-list__option" href="#" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
-                        {%- if currency_symbol -%}
-                          {{ country.name }} ({{ currency_iso_code }} {{ currency_symbol }})
-                        {%- else -%}
-                          {{ country.name }} ({{ currency_iso_code }})
-                        {%- endif -%}
+                    <li>
+                      <a href="https://twitter.com/andbox_official" title="ANDBOX on Twitter">
+                        <span class="icon icon-twitter" aria-hidden="true"></span>
+  
                       </a>
                     </li>
-                  {%- endfor -%}
+
+                    <li>
+                      <a href="https://www.instagram.com/andbox/" title="ANDBOX on Instagram">
+                        <span class="icon icon-instagram" aria-hidden="true"></span>
+  
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://www.youtube.com/andbox" title="ANDBOX on YouTube">
+                        <span class="icon icon-youtube" aria-hidden="true"></span>
+  
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://www.twitch.tv/andbox" title="ANDBOX on Twitch">
+                        <span class="icon-twitch" aria-hidden="true">
+                          <img src="//cdn.shopify.com/s/files/1/0142/6007/6630/files/Glitch_White_RGB.png?v=3810954955864878691">
+                        </span>
+                      </a>
+                    </li>
+                  
                 </ul>
-                <input type="hidden" name="country_code" id="CountrySelector" value="{{ localization.country.iso_code }}" data-disclosure-input/>
-              </div>
-            </div>
-          {%- endif -%}
-        {%- endform -%}
-
-        <p class="site-footer__copyright-content">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}<br>{{ powered_by_link }}</p>
-
-        {%- if section.settings.show_payment_icons -%}
-          {%- unless shop.enabled_payment_types == empty -%}
-            <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
-            <ul class="inline-list payment-icons site-footer__payment-icons">
-              {%- for type in shop.enabled_payment_types -%}
-                <li>
-                  {{ type | payment_type_svg_tag: class: 'icon' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          {%- endunless -%}
-        {%- endif -%}
-      </div>
+            </div> <!-- social media links -->
+          
+          </div>
+        </div>
+  
+        <div class="cell">
+            <div class="footer-notes">
+              
+                <p>© 2021, <a href="/" title="">ANDBOX</a> <span>|</span> <a href="/pages/privacy-policy">Privacy Policy</a> <span>|</span> <a href="/pages/terms-and-conditions">Terms &amp; Conditions</a> </p></div> <!-- footer notes -->
+        </div>
+        
+      </div> <!-- / footer_content_wrapper -->
+  
+    </div> <!-- wrapper -->
+    <div id="footer-bg-pattern" style="background-image: url(&quot;https://cdn.shopify.com/s/files/1/0142/6007/6630/files/andbox_texture_for_website.jpg?4121&quot;);">
     </div>
-
+  </footer>
+  
+  
   </div>
-</footer>
-
-
 
 {% schema %}
 {
