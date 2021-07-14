@@ -55,3 +55,9 @@ img {
 .index-sections .shopify-section:first-child:not(.shopify-section--full-width) {
     margin-top: 0;
 }
+
+@media screen and (min-width: 591px){
+    .main-content {
+        padding-bottom: 0;
+    }
+}
